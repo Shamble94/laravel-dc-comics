@@ -16,8 +16,8 @@
 </head>
 
 <body>
-
-
+  {{--   <h1>{{ $comics->title}}</h1> --}}
+    
 </body>
 
 </html>
