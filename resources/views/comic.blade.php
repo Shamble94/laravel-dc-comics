@@ -16,7 +16,22 @@
 </head>
 
 <body>
-  {{--   <h1>{{ $comics->title}}</h1> --}}
+    <div class="container">
+        <div class="row">
+
+            @foreach ($comics as $comic)
+            <div class="col-12 col-lg-2 ">
+                <div class="card mt-3 border-0 ">
+                    <a href="{{ route("show", $comic->id)}}"><img class="thumbs" src="{{ $comic["thumb"] }}" alt=""></a>
+                    <div class="card-title">
+                                <h6 class=" mt-2 "> {{ $comic["title"]}}</h6>
+                            </div>
+                    </div>
+                </a>
+            </div>
+        @endforeach
+        </div>
+    </div>
     
 </body>
 
