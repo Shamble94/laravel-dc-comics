@@ -14,7 +14,8 @@ use App\Http\Controllers\ComicController as ComicController;
 */
 
 Route::get('/', function () {
-    $comics = config("comics");
-    return view('comic', compact("comics"));
-})->name("comic");
+    
+    return view("home");
+})->name("home");
+
 Route::resource("comics", ComicController::class);

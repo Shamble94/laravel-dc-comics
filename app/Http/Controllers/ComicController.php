@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Comic;
 use Illuminate\Http\Request;
+use App\Models\Comic;
 
 class ComicController extends Controller
 {
@@ -14,10 +14,10 @@ class ComicController extends Controller
      */
     public function index()
     {
-        $comics = Comic::All();
-        dd($comics);
-        return view("comic", compact("comics"));
+        $comics = Comic::all();
+        return view('comics', compact("comics"));
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -48,6 +48,7 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
+        
         return view("show", compact("comic"));
     }
 

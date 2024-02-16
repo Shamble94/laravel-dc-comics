@@ -1,1 +1,17 @@
 @import '~bootstrap/scss/bootstrap';
+.card{
+   
+    margin: 0px;
+    img{
+        width: 100%
+    }
+}
+.fumetto{
+    display: flex;
+    text-align: center;
+    align-items: center;
+  }
+.col-2{
+    padding: 0;
+    margin: 0 10px;
+}

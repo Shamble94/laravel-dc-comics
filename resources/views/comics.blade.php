@@ -15,24 +15,25 @@
 
 </head>
 
-<body>
-    <div class="container">
-        <div class="row">
-
-            @foreach ($comics as $comic)
-            <div class="col-12 col-lg-2 ">
-                <div class="card mt-3 border-0 ">
-                    <a href="{{ route("show", $comic->id)}}"><img class="thumbs" src="{{ $comic["thumb"] }}" alt=""></a>
+ <body class="bg-primary">
+    <div class="container mt-3">
+        <div class="row"> -
+            <h1>Clicca sul fumetto per visualizzarne i dettagli</h1>
+            @foreach ($comics as $comic) 
+            <div class="col-2 ">
+                <div class="card mt-3 border-0  fumetto">
+                      <a href="{{ route("comics.show", $comic->id)}}"> <img class="thumbs" src="{{ $comic["thumb"] }}" alt=""></a>
                     <div class="card-title">
-                                <h6 class=" mt-2 "> {{ $comic["title"]}}</h6>
-                            </div>
+                         <h6 class=" mt-2 "> {{ $comic["title"]}}</h6>
+                    </div>
                     </div>
                 </a>
             </div>
         @endforeach
+
         </div>
     </div>
     
-</body>
+</body> 
 
 </html>
