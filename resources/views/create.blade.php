@@ -31,8 +31,8 @@
                     <input type="text" name="title" id="title" class="form-control" placeholder="Titolo fumetto" required>
                 </div>
                 <div class="form-group">
-                    <label class="mt-3" for="thumb">Descrizione</label>
-                    <textarea type="text" name="thumb" id="thumb" class="form-control" placeholder="Descrizione fumetto"> </textarea>
+                    <label class="mt-3" for="description">Descrizione</label>
+                    <textarea type="text" name="description" id="description" class="form-control" placeholder="Descrizione fumetto"> </textarea>
                 </div>
                 <div class="form-group">
                     <label class="mt-3" for="thumb">Immagine</label>
