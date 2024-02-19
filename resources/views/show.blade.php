@@ -21,8 +21,7 @@
             <div class="row"> 
                 
                 <div class="col-12 ">
-                    <div class="card mt-3 border-0  fumetto p-3">
-                          
+                    <div class="card mt-3 border-0  fumetto p-3">  
                         <div class="card-title">
                              <h2 class=" mt-2 "> {{ $comic["title"]}}</h2><hr>
                              <span class=" mt-2 "> {{ $comic["description"]}}</span><hr>
@@ -33,8 +32,9 @@
                              <h2 class=" mt-2 "> {{ implode(" , ", json_decode($comic["artists"]))}}</h2>
                              <h2 class=" mt-2 "> {{ implode(" , ", json_decode($comic["writers"]))}}</h2><hr>
                         </div>
-                        </div>
-                    </a>
+                    </div>
+                    <a href="{{ route("comics.edit", ["comic" => $comic->id ])}}"><button class="btn btn-success">Modifica</button></a>
+                    {{-- <a href="{{ route("comics.show")}}"><button class="btn btn-warning">Torna alla schermata fumetti</button></a> --}}
                 </div>
           
     
