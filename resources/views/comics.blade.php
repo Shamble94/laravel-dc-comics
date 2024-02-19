@@ -15,10 +15,11 @@
 
 </head>
 
- <body class="bg-primary">
+ <body>
     <div class="container mt-3">
         <div class="row"> -
             <h1>Clicca sul fumetto per visualizzarne i dettagli</h1>
+            <a href="{{ route("comics.create")}}"><button class="btn btn-primary">Aggiungi fumetto</button></a>
             @foreach ($comics as $comic) 
             <div class="col-2 ">
                 <div class="card mt-3 border-0  fumetto">
