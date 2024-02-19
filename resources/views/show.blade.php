@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Laravel</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    @vite('resources/js/app.js')
+
 </head>
 <body>
     <body class="bg-primary">
         <div class="container mt-3">
             <div class="row"> 
                 
-                <div class="col-2 ">
-                    <div class="card mt-3 border-0  fumetto">
+                <div class="col-12 ">
+                    <div class="card mt-3 border-0  fumetto p-3">
                           
                         <div class="card-title">
                              <h2 class=" mt-2 "> {{ $comic["title"]}}</h2><hr>
                              <span class=" mt-2 "> {{ $comic["description"]}}</span><hr>
-                             <h2 class=" mt-2 "> {{ $comic["price"]}}</h2>
+                             <h2 class=" mt-2 "> {{ $comic["price"]}}€</h2>
                              <h2 class=" mt-2 "> {{ $comic["series"]}}</h2>
                              <h2 class=" mt-2 "> {{ $comic["sell_date"]}}</h2>
                              <h2 class=" mt-2 "> {{ $comic["type"]}}</h2><hr>

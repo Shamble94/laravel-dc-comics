@@ -23,9 +23,13 @@
             @foreach ($comics as $comic) 
             <div class="col-2 ">
                 <div class="card mt-3 border-0  fumetto">
-                      <a href="{{ route("comics.show", $comic->id)}}"> <img class="thumbs" src="{{ $comic["thumb"] }}" alt=""></a>
+                    @if($comic->thumb == null)
+                    <img src="{{ Vite::asset("resources/img/placeholder.png")}}" alt="">
+                    @else
+                    <img class="thumbs" src="{{ $comic["thumb"] }}" alt="">
+                    @endif
                     <div class="card-title">
-                         <h6 class=" mt-2 "> {{ $comic["title"]}}</h6>
+                        <a href="{{ route("comics.show", $comic->id)}}"><h6 class=" mt-2 "> {{ $comic["title"]}}</h6></a>
                     </div>
                     </div>
                 </a>
