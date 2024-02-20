@@ -29,8 +29,8 @@
                              <h2 class=" mt-2 "> {{ $comic["series"]}}</h2>
                              <h2 class=" mt-2 "> {{ $comic["sell_date"]}}</h2>
                              <h2 class=" mt-2 "> {{ $comic["type"]}}</h2><hr>
-                             <h2 class=" mt-2 "> {{ implode(" , ", json_decode($comic["artists"]))}}</h2>
-                             <h2 class=" mt-2 "> {{ implode(" , ", json_decode($comic["writers"]))}}</h2><hr>
+                             <h2 class=" mt-2 "> {{implode(  " , ", json_decode($comic["artists"]))}}</h2>
+                             <h2 class=" mt-2 "> {{ implode(  " , ", json_decode($comic["writers"]))}}</h2><hr>
                         </div>
                     </div>
                     <a href="{{ route("comics.edit", ["comic" => $comic->id ])}}"><button class="btn btn-success">Modifica</button></a>
