@@ -24,7 +24,7 @@ class StoreComicRequest extends FormRequest
     public function rules()
     {
         return [
-            "title" => "required|max:30",
+            "title" => "required|max:50",
             "description" => "required",
             "price" => "required|decimal:2",
             "series" => "required|max:50",
@@ -36,9 +36,9 @@ class StoreComicRequest extends FormRequest
 
     }
     public function messages(){
-        return[
+        return [
             "title.required" => "Il campo titolo è obbligatorio",
-            "title.max" => `Il campo titolo deve essere di massimo 30 caratteri`,
+            "title.max" => "Il campo titolo deve essere di massimo 50 caratteri",
             "description.required " => "Il campo descrizione è obbligatorio",
             "price.required" => "Il campo prezzo è obbligatorio",
             "series.required" => "Il campo series è obbligatorio",

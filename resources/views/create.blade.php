@@ -66,8 +66,8 @@
                     <label class="mt-3" for="series">Serie</label>
                     <input type="text" name="series" id="series" class="form-control" placeholder="Serie fumetto" value="{{ old("series")}}">
                     @error('series')
-                        <div class ="text-danger">{{ $message }}</div>
-                    @enderror
+                    <div class ="text-danger">{{ $message }}</div>
+                @enderror
                 </div>
                 <div class="form-group">
                     <label class="mt-3" for="sale_date">Anno di uscita</label>
