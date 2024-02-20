@@ -33,8 +33,16 @@
                              <h2 class=" mt-2 "> {{ implode(  " , ", json_decode($comic["writers"]))}}</h2><hr>
                         </div>
                     </div>
-                    <a href="{{ route("comics.edit", ["comic" => $comic->id ])}}"><button class="btn btn-success">Modifica</button></a>
-                    {{-- <a href="{{ route("comics.show")}}"><button class="btn btn-warning">Torna alla schermata fumetti</button></a> --}}
+                    <div class="d-flex">
+                        <a href="{{ route("comics.edit", ["comic" => $comic->id ])}}"><button class="btn btn-success">Modifica</button></a>
+                        <form action="{{ route("comics.destroy", ["comic" => $comic->id])}}" method="POST">
+                            @csrf
+                            @method("DELETE")
+                            <button type ="submit" class="btn btn-danger mx-3">Cancella  </button>
+                        </form>
+                        {{-- <a href="{{ route("comics.show")}}"><button class="btn btn-warning">Torna alla schermata fumetti</button></a> --}}
+
+                    </div>
                 </div>
           
     

@@ -37,11 +37,11 @@
                 @csrf
                 <div class="form-group">
                     <label class="mt-3" for="title">Titolo</label>
-                    <input type="text" name="title" id="title" class="form-control" placeholder="Titolo fumetto" required>
+                    <input type="text" name="title" id="title" class="form-control" placeholder="Titolo fumetto" required  value="{{ old("title")}}">
                 </div>
                 <div class="form-group">
                     <label class="mt-3" for="description">Descrizione</label>
-                    <textarea type="text" name="description" id="description" class="form-control" placeholder="Descrizione fumetto"> </textarea>
+                    <textarea type="text" name="description" id="description" class="form-control" placeholder="Descrizione fumetto" value="{{ old("description")}}"> </textarea>
                 </div>
                 <div class="form-group">
                     <label class="mt-3" for="thumb">Immagine</label>
@@ -49,27 +49,27 @@
                 </div>
                 <div class="form-group">
                     <label class="mt-3" for="price">Prezzo</label>
-                    <input type="text" name="price" id="price" class="form-control" placeholder="Titolo fumetto">
+                    <input type="text" name="price" id="price" class="form-control" placeholder="Prezzo fumetto" value="{{ old("price")}}">
                 </div>
                 <div class="form-group">
                     <label class="mt-3" for="series">Serie</label>
-                    <input type="text" name="series" id="series" class="form-control" placeholder="Serie fumetto">
+                    <input type="text" name="series" id="series" class="form-control" placeholder="Serie fumetto" value="{{ old("series")}}">
                 </div>
                 <div class="form-group">
                     <label class="mt-3" for="sale_date">Anno di uscita</label>
-                    <input type="text" name="sale_date" id="sale_date" class="form-control" placeholder="Anno di uscita fumetto">
+                    <input type="text" name="sale_date" id="sale_date" class="form-control" placeholder="Anno di uscita fumetto" value="{{ old("sale_date")}}">
                 </div>
                 <div class="form-group">
                     <label class="mt-3" for="type">Tipo</label>
-                    <input type="text" name="type" id="type" class="form-control" placeholder="Tipo fumetto">
+                    <input type="text" name="type" id="type" class="form-control" placeholder="Tipo fumetto" value="{{ old("type")}}">
                 </div>
                 <div class="form-group">
                     <label class="mt-3" for="artists">Artisti</label>
-                    <input type="text" name="artists" id="artists" class="form-control" placeholder="Artisti fumetto">
+                    <input type="text" name="artists" id="artists" class="form-control" placeholder="Artisti fumetto" value="{{ old("artists")}}">
                 </div>
                 <div class="form-group">
                     <label class="mt-3" for="writers">Scrittori</label>
-                    <input type="text" name="writers" id="writers" class="form-control" placeholder="Scittori fumetto">
+                    <input type="text" name="writers" id="writers" class="form-control" placeholder="Scittori fumetto" value="{{ old("writers")}}">
                 </div>
                 <button type="submit" class="btn btn-primary mt-3 ">Inserisci fumetto</button>
                 
