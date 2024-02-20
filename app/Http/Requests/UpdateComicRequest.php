@@ -26,12 +26,12 @@ class UpdateComicRequest extends FormRequest
         return [
             "title" => "required|max:30",
             "description" => "required",
-            "price" => "required|numeric",
+            "price" => "required|decimal:2",
             "series" => "required|max:50",
             "sale_date" => "required|date",
             "type" => "required|max:30",
-            "artists" => "required|",
-            "writers" => "required|"
+            "artists" => "required",
+            "writers" => "required"
         ];
 
     }
@@ -40,16 +40,16 @@ class UpdateComicRequest extends FormRequest
             "title.required" => "Il campo titolo è obbligatorio",
             "title.max" => `Il campo titolo deve essere di massimo 30 caratteri`,
             "description.required " => "Il campo descrizione è obbligatorio",
-            "price.required " => "Il campo prezzo è obbligatorio",
-            "price.numeric " => "Il campo prezzo deve essere un numero",
+            "price.required" => "Il campo prezzo è obbligatorio",
+            "price.decimal" => "Il campo prezzo deve essere un numero decimale (esempio 3.99)",
             "series.required " => "Il campo series è obbligatorio",
-            "series.max " => "Il campo series deve essere di massimo 50 caratteri",
-            "sale_date.required " => "Il campo sale_date è obbligatorio",
-            "sale_date.date " => "Il campo sale_date deve essere una data in formato Y-m-d",
-            "type.required " => "Il campo tipo è obbligatorio",
-            "type.max " => "Il campo tipo è deve essere di massimo 30 caratteri",
-            "artists.required " => "Il campo artists è obbligatorio",
-            "writers.required " => "Il campo writers è obbligatorio",
+            "series.max" => "Il campo series deve essere di massimo 50 caratteri",
+            "sale_date.required" => "Il campo sale_date è obbligatorio",
+            "sale_date.date" => "Il campo sale_date deve essere una data in formato Y-m-d",
+            "type.required" => "Il campo tipo è obbligatorio",
+            "type.max" => "Il campo tipo è deve essere di massimo 30 caratteri",
+            "artists.required" => "Il campo artists è obbligatorio",
+            "writers.required" => "Il campo writers è obbligatorio",
         ];
     }
 }
