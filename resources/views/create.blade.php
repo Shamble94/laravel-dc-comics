@@ -38,38 +38,64 @@
                 <div class="form-group">
                     <label class="mt-3" for="title">Titolo</label>
                     <input type="text" name="title" id="title" class="form-control" placeholder="Titolo fumetto" required  value="{{ old("title")}}">
+                    @error('title')
+                        <div class ="text-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label class="mt-3" for="description">Descrizione</label>
-                    <textarea type="text" name="description" id="description" class="form-control" placeholder="Descrizione fumetto" value="{{ old("description")}}"> </textarea>
+                    <input type="text" name="description" id="description" class="form-control" placeholder="Descrizione fumetto" value="{{ old("description")}}">
+                    @error('description')
+                        <div class ="text-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label class="mt-3" for="thumb">Immagine</label>
                     <input type="text" name="thumb" id="thumb" class="form-control" >
+                    @error('thumb')
+                        <div class ="text-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label class="mt-3" for="price">Prezzo</label>
                     <input type="text" name="price" id="price" class="form-control" placeholder="Prezzo fumetto" value="{{ old("price")}}">
-                </div>
+                    @error('price')
+                        <div class ="text-danger">{{ $message }}</div>
+                    @enderror
                 <div class="form-group">
                     <label class="mt-3" for="series">Serie</label>
                     <input type="text" name="series" id="series" class="form-control" placeholder="Serie fumetto" value="{{ old("series")}}">
+                    @error('series')
+                        <div class ="text-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label class="mt-3" for="sale_date">Anno di uscita</label>
                     <input type="text" name="sale_date" id="sale_date" class="form-control" placeholder="Anno di uscita fumetto" value="{{ old("sale_date")}}">
+                    @error('sale_date')
+                        <div class ="text-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label class="mt-3" for="type">Tipo</label>
                     <input type="text" name="type" id="type" class="form-control" placeholder="Tipo fumetto" value="{{ old("type")}}">
+                    @error('type')
+                        <div class ="text-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label class="mt-3" for="artists">Artisti</label>
                     <input type="text" name="artists" id="artists" class="form-control" placeholder="Artisti fumetto" value="{{ old("artists")}}">
+                    @error('artists')
+                        <div class ="text-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label class="mt-3" for="writers">Scrittori</label>
                     <input type="text" name="writers" id="writers" class="form-control" placeholder="Scittori fumetto" value="{{ old("writers")}}">
+                    @error('writers')
+                        <div class ="text-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <button type="submit" class="btn btn-primary mt-3 ">Inserisci fumetto</button>
                 
