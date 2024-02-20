@@ -43,7 +43,7 @@ class ComicController extends Controller
             "description" => "required",
             "price" => "required",
             "series" => "required|max:50",
-            "sale_date" => "required",
+            "sale_date" => "required|date",
             "type" => "required|max:30",
             "artists" => "required|",
             "writers" => "required|"
@@ -52,16 +52,8 @@ class ComicController extends Controller
         $form_data = $request->all();
 
         $comic = new Comic();
-        $comic->title = $form_data["title"];
-        $comic->description = $form_data["description"];
-        $comic->thumb = $form_data["thumb"];
-        $comic->price = $form_data["price"];
-        $comic->series = $form_data["series"];
-        $comic->sale_date = $form_data["sale_date"];
-        $comic->type = $form_data["type"];
-        $comic->artists = $form_data["artists"];
-        $comic->writers = $form_data["writers"];
 
+        $comic->fill($form_data);
         $comic->save();
 
         return redirect()->route("comics.show", ["comic" => $comic]);
@@ -105,7 +97,7 @@ class ComicController extends Controller
             "description" => "required",
             "price" => "required",
             "series" => "required|max:50",
-            "sale_date" => "required",
+            "sale_date" => "required|date",
             "type" => "required|max:30",
             "artists" => "required|",
             "writers" => "required|"
@@ -114,17 +106,9 @@ class ComicController extends Controller
         $form_data = $request->all();
 
         $comic =  Comic::find($id);
-        $comic->title = $form_data["title"];
-        $comic->description = $form_data["description"];
-        $comic->thumb = $form_data["thumb"];
-        $comic->price = $form_data["price"];
-        $comic->series = $form_data["series"];
-        $comic->sale_date = $form_data["sale_date"];
-        $comic->type = $form_data["type"];
-        $comic->artists = $form_data["artists"];
-        $comic->writers = $form_data["writers"];
+       
 
-        $comic->update();
+        $comic->update($form_data);
       
         return redirect()->route("comics.show", ["comic" => $comic]);
     }
