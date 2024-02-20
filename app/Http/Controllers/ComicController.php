@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Comic;
 use Illuminate\Support\Facades\Validator;
+
+use App\Http\Requests\StoreComicRequest;
+use App\Http\Requests\UpdateComicRequest;
 class ComicController extends Controller
 {
     /**
@@ -35,7 +38,7 @@ class ComicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreComicRequest $request)
     {
 
          $request->validate([
@@ -89,11 +92,11 @@ class ComicController extends Controller
      * @param  \App\Models\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,  $id)
+    public function update(UpdateComicRequest $request,  $id)
     {
         
 
-        $form_data = $this->validation($request->all()) ;
+        /* $form_data = $this->validation($request->all()) ; */
         
         $comic =  Comic::find($id);
        
@@ -118,37 +121,5 @@ class ComicController extends Controller
 
         return redirect()->route("comics.index", ["comic" => $comic]);
     }
-    private function validation($data)
-    {
-        $validator = Validator::make(
-            $data,
-            [
-                "title" => "required|max:30",
-                "description" => "required",
-                "price" => "required|numeric",
-                "series" => "required|max:50",
-                "sale_date" => "required|date",
-                "type" => "required|max:30",
-                "artists" => "required|",
-                "writers" => "required|"
-            ],
-            [
-                "title.required" => "Il campo titolo è obbligatorio",
-                "title.max" => `Il campo titolo deve essere di massimo 30 caratteri`,
-                "description.required " => "Il campo descrizione è obbligatorio",
-                "price.required " => "Il campo prezzo è obbligatorio",
-                "price.numeric " => "Il campo prezzo deve essere un numero",
-                "series.required " => "Il campo series è obbligatorio",
-                "series.max " => "Il campo series deve essere di massimo 50 caratteri",
-                "sale_date.required " => "Il campo sale_date è obbligatorio",
-                "sale_date.date " => "Il campo sale_date deve essere una data in formato Y-m-d",
-                "type.required " => "Il campo tipo è obbligatorio",
-                "type.max " => "Il campo tipo è deve essere di massimo 30 caratteri",
-                "artists.required " => "Il campo artists è obbligatorio",
-                "writers.required " => "Il campo writers è obbligatorio",
-            ]
-            )->validate();
-            return $validator;
-        }
-
+ 
 }
